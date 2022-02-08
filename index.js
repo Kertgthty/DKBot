@@ -16,7 +16,7 @@ client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
   // Example of changing the bot's playing game to something useful. `client.user` is what the
   // docs refer to as the "ClientUser".
-  client.user.setActivity(`на ${client.guilds.cache.size} серверах - ?help `);
+  client.user.setActivity(`?help `);
 });
 
 client.on("message", message => {
@@ -78,7 +78,7 @@ if (message.content.startsWith("?kick")) {
 if(message.content === "?help fun") {
  let embed = new Discord.MessageEmbed()
  .setTitle("**:stuck_out_tongue:|Fun**")
- .setDescription("`?ping`") 
+ .setDescription("`?ping` `?invite` ") 
  .setColor("RANDOM")
  .setFooter("Bot Created by @Ker#4353")
  message.channel.send(embed)
@@ -107,8 +107,16 @@ if(message.content === "?ping") {
  .setColor("RANDOM")
  message.channel.send(embed)
 }
+if(message.content === "?donate") {
+ let embed = new Discord.MessageEmbed()
+ .setTitle("Developer Gift!")
+ .setDescription("**🔗 Donate - https://www.donationalerts.com/r/dkbot**") 
+ .setColor("RANDOM")
+ message.channel.send(embed)
+}
 if(message.content === "?invite") {
  let embed = new Discord.MessageEmbed()
+ .setTitle("Invite bot the server!")
  .setDescription("**🔗 Bot invite - https://clck.ru/auHtw**") 
  .setColor("RANDOM")
  message.channel.send(embed)
@@ -121,6 +129,15 @@ if(message.content === "?help") {
  .addField(":gear:Utility", "`?help util`")
  .addField(":stuck_out_tongue:Fun","`?help fun `") 
  .addField(":dog:Animals","`?help animals`")
+ .setColor("RANDOM")
+ .setFooter("Bot Created by @Ker#4353")
+ .setThumbnail("https://cdn.discordapp.com/avatars/825710266653999144/c55f0c3fd46c9638d55af39f3d46a8f3.png?size=1024")
+ message.channel.send(embed)
+}
+if(message.content === "?bot info") {
+ let embed = new Discord.MessageEmbed()
+ .setTitle("**Bot name - DKBot**")
+ .setDescription(`Monitorning servers - **${client.guilds.cache.size}**`)
  .setColor("RANDOM")
  .setFooter("Bot Created by @Ker#4353")
  .setThumbnail("https://cdn.discordapp.com/avatars/825710266653999144/1f905ad18c0b4cfe546dccbfeed3c703.png?size=1024")
@@ -147,4 +164,4 @@ message.reply("У тебя нет прав!")
 
 }
 })
-client.login("TOKEN-BOT") 
+client.login("TOKEN_BOT") 
