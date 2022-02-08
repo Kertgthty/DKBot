@@ -184,4 +184,4 @@ message.reply("У тебя нет прав!")
 
 }
 })
-client.login("ODI1NzEwMjY2NjUzOTk5MTQ0.YGB4nA.MBKNva90rtI3nU2539r5-MOMISg") 
+client.login("TOKEN_BOT") 
