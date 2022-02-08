@@ -1,5 +1,7 @@
 const express = require("express")
 const app = express()
+const ytdl = require('ytdl-core');
+const ytSearch = require('yt-search');
 
 app.get("/", (req, res) => {
  res.send("Привет мир!")
@@ -75,10 +77,18 @@ if (message.content.startsWith("?kick")) {
  .setFooter("Bot Created by @Ker#4353")
  message.channel.send(embed)
 }
+ if(message.content === "?help music") {
+ let embed = new Discord.MessageEmbed()
+ .setTitle("**:musical_note:** **|** **Music Commands**")
+ .setDescription("`?play`, `?leave` commands no ENEBLED! Developing code.") 
+ .setColor("RANDOM")
+ .setFooter("Bot Created by @Ker#4353")
+ message.channel.send(embed)
+}
 if(message.content === "?help fun") {
  let embed = new Discord.MessageEmbed()
  .setTitle("**:stuck_out_tongue:|Fun**")
- .setDescription("`?ping` `?invite` ") 
+ .setDescription("`?ping` `?invite` `?donate` `?bot info` `?partners` ") 
  .setColor("RANDOM")
  .setFooter("Bot Created by @Ker#4353")
  message.channel.send(embed)
@@ -107,6 +117,15 @@ if(message.content === "?ping") {
  .setColor("RANDOM")
  message.channel.send(embed)
 }
+if(message.content === "?partners") {
+ let embed = new Discord.MessageEmbed()
+ .setTitle("Partners help.")
+ .setDescription("<--------------------------------->")
+ .addField("🔗 Servers - ?partners servers", "**✅ Users - ?partners users**")
+ .setColor("RANDOM")
+ .setFooter("Bot Created by @Ker#4353")
+ message.channel.send(embed)
+}
 if(message.content === "?donate") {
  let embed = new Discord.MessageEmbed()
  .setTitle("Developer Gift!")
@@ -129,9 +148,10 @@ if(message.content === "?help") {
  .addField(":gear:Utility", "`?help util`")
  .addField(":stuck_out_tongue:Fun","`?help fun `") 
  .addField(":dog:Animals","`?help animals`")
+ .addField(":musical_note:Music", "`?help music`")
  .setColor("RANDOM")
  .setFooter("Bot Created by @Ker#4353")
- .setThumbnail("https://cdn.discordapp.com/avatars/825710266653999144/c55f0c3fd46c9638d55af39f3d46a8f3.png?size=1024")
+ .setThumbnail("https://cdn.discordapp.com/avatars/825710266653999144/2c84e0756fa0e8e4270f100c5bd7ac16.png?size=1024")
  message.channel.send(embed)
 }
 if(message.content === "?bot info") {
@@ -164,4 +184,4 @@ message.reply("У тебя нет прав!")
 
 }
 })
-client.login("TOKEN_BOT") 
+client.login("ODI1NzEwMjY2NjUzOTk5MTQ0.YGB4nA.MBKNva90rtI3nU2539r5-MOMISg") 
