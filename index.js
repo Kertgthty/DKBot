@@ -15,7 +15,7 @@ const client = new Discord.Client()
 
 client.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
-  console.log(`Bot has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
+  console.log(`Бот запустился, наблюдает за ${client.users.cache.size} пользователями, и ${client.channels.cache.size} каналами и ${client.guilds.cache.size} серверами.`);
   // Example of changing the bot's playing game to something useful. `client.user` is what the
   // docs refer to as the "ClientUser".
   client.user.setActivity(`?help `);
@@ -143,12 +143,12 @@ if(message.content === "?invite") {
 if(message.content === "?help") {
  let embed = new Discord.MessageEmbed()
  .setTitle("**Prefix = `?`**")
- .setDescription("**Bot's Commands **")
- .addField(":tools:Moderation","`?help mod `") 
- .addField(":gear:Utility", "`?help util`")
- .addField(":stuck_out_tongue:Fun","`?help fun `") 
- .addField(":dog:Animals","`?help animals`")
- .addField(":musical_note:Music", "`?help music`")
+ .setDescription("**DKBot's Commands **")
+ .addField(":tools: Moderation","`?help mod `") 
+ .addField(":gear: Utility", "`?help util`")
+ .addField(":stuck_out_tongue: Fun","`?help fun `") 
+ .addField(":dog: Animals","`?help animals`")
+ .addField(":musical_note: Music", "`?help music`")
  .setColor("RANDOM")
  .setFooter("Bot Created by @Ker#4353")
  .setThumbnail("https://cdn.discordapp.com/avatars/825710266653999144/2c84e0756fa0e8e4270f100c5bd7ac16.png?size=1024")
@@ -156,10 +156,10 @@ if(message.content === "?help") {
 }
 if(message.content === "?bot info") {
  let embed = new Discord.MessageEmbed()
- .setTitle("**Bot name - DKBot**")
- .setDescription(`Monitorning servers - **${client.guilds.cache.size}**`)
+ .setTitle("**Information bot.**")
+ .addField("Bot name: **DKBot**", "**Prefix: ?**", "**Developer: Ker#4353**")
+ .addField("**Developer: Ker#4353**", `**Monitorning servers: ${client.guilds.cache.size}**`)
  .setColor("RANDOM")
- .setFooter("Bot Created by @Ker#4353")
  .setThumbnail("https://cdn.discordapp.com/avatars/825710266653999144/1f905ad18c0b4cfe546dccbfeed3c703.png?size=1024")
  message.channel.send(embed)
 }
@@ -170,7 +170,7 @@ let clear = arg[1];
 if(!clear) return message.channel.send(`:x: | \`Неправильное использование команды, вам нужно предоставить количество сообщений для очистки.\` 
 **Example:** \`_purge 50\` `)
 if(isNaN(clear)) return message.channel.send(":x: | ``Пожалуйста, введите правильный номер, чтобы удалить сообщения.``")
-if(clear > 1000) return message.channel.send(":x: | ``Вы не можете удалить более 1000 сообщений.``")
+if(clear > 100000000) return message.channel.send(":x: | ``Вы не можете удалить более 1000 сообщений.``")
 if(clear < 1) return message.channel.send(":x: | ``Вы не можете удалить менее 1 сообщения.``")
 
 message.channel.bulkDelete(clear)
